@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 11, 2023 at 10:25 AM
+-- Generation Time: Dec 11, 2023 at 03:03 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -87,7 +87,7 @@ INSERT INTO `adherent` (`id_a`, `n_agrement`, `fonction`, `nom_a`, `prenom_a`, `
 (1, 90001, 'comptable', 'dupont', 'michel', '0612345678', 'michel.dupont@gmail.com', 1),
 (2, 90001, 'président', 'marechal', 'thomas', '0687654321', 'thomas.marechal@utt.fr', 1),
 (3, 90001, NULL, 'boccard', 'pierre-emeric', '0712121212', 'pem@gmail.com', 2),
-(5, 90001, NULL, 'neveu', 'anouchka', '0612121212', 'ann.neveu@gmail.com', 3);
+(4, 90001, NULL, 'neveu', 'anouchka', '0612121212', 'ann.neveu@gmail.com', 3);
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,10 @@ CREATE TABLE `ad_habite` (
 --
 
 INSERT INTO `ad_habite` (`id_a`, `id_adresse`) VALUES
-(1, 2);
+(1, 2),
+(2, 3),
+(3, 1),
+(4, 4);
 
 -- --------------------------------------------------------
 
@@ -189,7 +192,7 @@ CREATE TABLE `as_habite` (
 --
 
 INSERT INTO `as_habite` (`n_agrement`, `id_adresse`) VALUES
-(90001, 1);
+(90001, 5);
 
 -- --------------------------------------------------------
 
@@ -322,8 +325,9 @@ CREATE TABLE `paiement` (
 INSERT INTO `paiement` (`id_paiement`, `id_a`, `tarif`, `date_echeance`, `date_paiement`) VALUES
 (1, 1, 12.5, '2023-12-13', NULL),
 (2, 2, 12.5, '2023-12-26', NULL),
-(3, 3, 25, '2024-01-16', NULL),
-(9, 5, 50, '2023-12-09', NULL);
+(3, 3, 25, '2023-12-09', '2023-12-11'),
+(4, 4, 50, '2023-12-09', NULL),
+(5, 3, 25, '2024-12-11', NULL);
 
 -- --------------------------------------------------------
 
@@ -569,7 +573,7 @@ ALTER TABLE `non-adherent`
 -- AUTO_INCREMENT for table `paiement`
 --
 ALTER TABLE `paiement`
-  MODIFY `id_paiement` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_paiement` tinyint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `photo`
